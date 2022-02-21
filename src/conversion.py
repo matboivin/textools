@@ -7,8 +7,7 @@ from emot.emo_unicode import UNICODE_EMOJI as EMOJIS
 
 def convert_emoticons(text):
     for emot in EMOTICONS:
-        if emot == ":/" and text.find("://") == -1:
-            text = text.replace(emot, "_".join(EMOTICONS[emot].replace(",","").replace(":","").split()))
+        text = text.replace(emot, "_".join(EMOTICONS[emot].replace(",","").replace(":","").split()))
     return text
 
 
