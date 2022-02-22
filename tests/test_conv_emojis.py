@@ -2,7 +2,6 @@
 
 from src.conversion import convert_emojis
 
-
 def test_convert_emojis():
     text = "😎"
     result = convert_emojis(text)

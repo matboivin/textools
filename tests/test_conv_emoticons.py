@@ -2,7 +2,6 @@
 
 from src.conversion import convert_emoticons
 
-
 def test_convert_emoticons():
     text = ":) :D 8D"
     result = convert_emoticons(text)
