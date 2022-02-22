@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import tests.pathmagic
 from src.conversion import convert_accents
 
 
