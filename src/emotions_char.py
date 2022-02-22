@@ -3,6 +3,8 @@
 
 from emot.emo_unicode import EMOTICONS_EMO
 
+__all__ = ["EMOTICONS_EXPAND", "DONGER_EMO"]
+
 EMOTICONS_EXPAND = EMOTICONS_EMO
 
 EMOTICONS_EXPAND.update({
