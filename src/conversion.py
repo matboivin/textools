@@ -2,8 +2,8 @@
 
 import unicodedata
 from emot.emo_unicode import UNICODE_EMOJI as EMOJIS
-from src.emotions_char import EMOTICONS_EXPAND as EMOTICONS
-from src.emotions_char import DONGER_EMO as DONGERS
+from .emotions_char import EMOTICONS_EXPAND as EMOTICONS
+from .emotions_char import DONGER_EMO as DONGERS
 
 def convert_emoticons(text):
     for emot in EMOTICONS:
