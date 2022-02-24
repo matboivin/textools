@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-import pytest
-from src.removal import remove_stopwords
+import nltk
 from nltk.tokenize import word_tokenize
+from src.removal import remove_stopwords
+import pytest
 
 language = "French"
 text = "Wikipédia est un projet d’encyclopédie collective en ligne, universelle, multilingue et fonctionnant sur le principe du wiki. Ce projet vise à offrir un contenu librement réutilisable, objectif et vérifiable, que chacun peut modifier et améliorer."
