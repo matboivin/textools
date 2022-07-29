@@ -1,3 +1,2 @@
 emot
 nltk
-pytest

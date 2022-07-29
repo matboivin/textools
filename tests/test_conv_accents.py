@@ -1,8 +1,11 @@
-#!/usr/bin/env python3
+"""Test accent conversion."""
 
-from src.conversion import convert_accents
+from textools.conversion import convert_accents
 
-def test_convert_accents():
-    text = "àéèôù"
-    result = convert_accents(text)
+
+def test_convert_accents() -> None:
+    """Test accent conversion."""
+    text: str = "àéèôù"
+    result: str = convert_accents(text)
+
     assert result == "aeeou"

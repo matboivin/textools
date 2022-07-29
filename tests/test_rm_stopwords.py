@@ -1,19 +1,41 @@
-#!/usr/bin/env python3
+"""Test stopwords removal."""
 
-import nltk
+from typing import List
 from nltk.tokenize import word_tokenize
-from src.removal import remove_stopwords
 import pytest
 
-language = "French"
-text = "Wikipédia est un projet d’encyclopédie collective en ligne, universelle, multilingue et fonctionnant sur le principe du wiki. Ce projet vise à offrir un contenu librement réutilisable, objectif et vérifiable, que chacun peut modifier et améliorer."
-tokens = word_tokenize(text, language)
-expected = ["Wikipédia", "projet", "’", "encyclopédie", "collective", "ligne", ",", "universelle", ",", "multilingue", "fonctionnant", "principe", "wiki", ".", "projet", "vise", "offrir", "contenu", "librement", "réutilisable", ",", "objectif", "vérifiable", ",", "chacun", "peut", "modifier", "améliorer", "."]
+from textools.removal import remove_stopwords
 
-def test_remove_stopwords_err():
+LANGUAGE: str = "French"
+TEXT: str = """Wikipédia est un projet d’encyclopédie collective en ligne,
+universelle, multilingue et fonctionnant sur le principe du wiki. Ce projet
+vise à offrir un contenu librement réutilisable, objectif et vérifiable, que
+chacun peut modifier et améliorer."""
+TOKENS: List[str] = word_tokenize(TEXT, LANGUAGE)
+EXPECTED: List[str] = [
+    "Wikipédia", "projet", "’", "encyclopédie", "collective", "ligne", ",",
+    "universelle", ",", "multilingue", "fonctionnant", "principe", "wiki", ".",
+    "projet", "vise", "offrir", "contenu", "librement", "réutilisable", ",",
+    "objectif", "vérifiable", ",", "chacun", "peut", "modifier", "améliorer",
+    "."
+]
+
+
+def test_remove_stopwords_err() -> None:
+    """Test stopwords removal error.
+
+    Raises
+    ------
+    ValueError
+        If language is not handled by NLTK.
+
+    """
     with pytest.raises(ValueError):
-        result = remove_stopwords("français", tokens)
+        remove_stopwords("français", TOKENS)
 
-def test_remove_stopwords():
-    result = remove_stopwords(language, tokens)
-    assert result == expected
+
+def test_remove_stopwords() -> None:
+    """Test stopwords removal."""
+    result: List[str] = remove_stopwords(LANGUAGE, TOKENS)
+
+    assert result == EXPECTED

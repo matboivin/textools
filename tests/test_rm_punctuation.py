@@ -1,8 +1,11 @@
-#!/usr/bin/env python3
+"""Test punctuation removal."""
 
-from src.removal import remove_punctuation
+from textools.removal import remove_punctuation
 
-def test_remove_punctuation():
-    text = "!#$%&'\"()*+,-./:;?@[]^_`{|}~\\"
-    result = remove_punctuation(text)
+
+def test_remove_punctuation() -> None:
+    """Test punctuation removal."""
+    text: str = "!#$%&'\"()*+,-./:;?@[]^_`{|}~\\"
+    result: str = remove_punctuation(text)
+
     assert result == ""

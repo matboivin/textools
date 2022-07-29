@@ -1,8 +1,11 @@
-#!/usr/bin/env python3
+"""Test emojis conversion."""
 
-from src.conversion import convert_emojis
+from textools.conversion import convert_emojis
 
-def test_convert_emojis():
-    text = "😎"
-    result = convert_emojis(text)
+
+def test_convert_emojis() -> None:
+    """Test emojis conversion."""
+    text: str = "😎"
+    result: str = convert_emojis(text)
+
     assert result == "smiling_face_with_sunglasses"

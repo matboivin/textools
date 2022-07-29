@@ -1,8 +1,11 @@
-#!/usr/bin/env python3
+"""Test dongers conversion."""
 
-from src.conversion import convert_dongers
+from textools.conversion import convert_dongers
 
-def test_convert_dongers():
-    text = "ᕕ( ՞ ᗜ ՞ )ᕗ ╰(◕ᗜ◕)╯ (-_-｡)"
-    result = convert_dongers(text)
+
+def test_convert_dongers() -> None:
+    """Test dongers conversion."""
+    text: str = "ᕕ( ՞ ᗜ ՞ )ᕗ ╰(◕ᗜ◕)╯ (-_-｡)"
+    result: str = convert_dongers(text)
+
     assert result == "happy happy sad"
