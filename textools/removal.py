@@ -50,7 +50,8 @@ def remove_stopwords(language: str, tokens: List[str]) -> List[str]:
     """
     if language.lower() not in stopwords.fileids():
         raise ValueError(
-            f"remove_stopwords: language '{language}' is not available")
+            f"remove_stopwords: language '{language}' is not available"
+        )
 
     ignored_words: List[str] = nltk.corpus.stopwords.words(language)
     result: List[str] = [
@@ -73,4 +74,4 @@ def remove_urls(text: str) -> str:
         The text without URLs.
 
     """
-    return re.sub(r'https?://\S+|www\.\S+', "", text)
+    return re.sub(r"https?://\S+|www\.\S+", "", text)

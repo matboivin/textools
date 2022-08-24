@@ -6,6 +6,10 @@ Helpers for common text preprocessing tasks.
 
 Clone the repository and change it to your working directory.
 
+```console
+$ poetry install
+```
+
 ## Usage
 
 Integrate `textools` as a library.
@@ -19,4 +23,10 @@ import textools
 
 tokens: List[str] = word_tokenize(TEXT, LANGUAGE)
 result: List[str] = textools.remove_stopwords(LANGUAGE, tokens)
+```
+
+## Testing
+
+```console
+$ poetry run pytest
 ```

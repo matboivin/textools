@@ -1,8 +1,9 @@
 """Test stopwords removal."""
 
 from typing import List
-from nltk.tokenize import word_tokenize
+
 import pytest
+from nltk.tokenize import word_tokenize
 
 from textools.removal import remove_stopwords
 
@@ -13,11 +14,35 @@ vise à offrir un contenu librement réutilisable, objectif et vérifiable, que
 chacun peut modifier et améliorer."""
 TOKENS: List[str] = word_tokenize(TEXT, LANGUAGE)
 EXPECTED: List[str] = [
-    "Wikipédia", "projet", "’", "encyclopédie", "collective", "ligne", ",",
-    "universelle", ",", "multilingue", "fonctionnant", "principe", "wiki", ".",
-    "projet", "vise", "offrir", "contenu", "librement", "réutilisable", ",",
-    "objectif", "vérifiable", ",", "chacun", "peut", "modifier", "améliorer",
-    "."
+    "Wikipédia",
+    "projet",
+    "’",
+    "encyclopédie",
+    "collective",
+    "ligne",
+    ",",
+    "universelle",
+    ",",
+    "multilingue",
+    "fonctionnant",
+    "principe",
+    "wiki",
+    ".",
+    "projet",
+    "vise",
+    "offrir",
+    "contenu",
+    "librement",
+    "réutilisable",
+    ",",
+    "objectif",
+    "vérifiable",
+    ",",
+    "chacun",
+    "peut",
+    "modifier",
+    "améliorer",
+    ".",
 ]
 
 
